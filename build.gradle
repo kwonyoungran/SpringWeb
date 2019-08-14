@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+	compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -28,3 +29,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+//Spring Boot Overriding(강제로 5.2.11로 버전맞추기)
+//ext['hibernate.version'] = '5.2.11.Final'
