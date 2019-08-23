@@ -14,15 +14,15 @@ cache:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료시 메일로 알람
-notifications:
-  email:
-    recipients:
-      - horany83@gmail.com 
-
 # gradlew 실행권한      
 before_install:
  - chmod +x gradlew     
+
+# jar파일로 압축하여 배포
+before_deploy:
+  - zip -r springboot-webservice *
+  - mkdir -p deploy
+  - mv springboot-webservice.zip deploy/springboot-webservice.zip
  
 # deploy 설정
 deploy:
@@ -37,3 +37,12 @@ deploy:
     on:
       repo: kwonyoungran/SpringWeb #Github 주소
       branch: master
+      
+# CI 실행 완료시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - horany83@gmail.com       
+      
+      
+      
