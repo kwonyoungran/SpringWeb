@@ -17,6 +17,8 @@ public class Application {
 		.properties(APPLICATION_LOCATIONS)
 		.run(args);
 //		SpringApplication.run(Application.class, args);
+		
+
 	}
 
 }

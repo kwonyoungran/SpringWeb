@@ -17,8 +17,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class WebRestController {
 	
-	//기존소스
-//	private PostsRepository postsRepository;
 	private PostsService postsService;
 	private Environment env;
 
@@ -26,12 +24,6 @@ public class WebRestController {
 	public String hello() {
 		return "HelloWorld";
 	}
-	
-	//기존소스
-//	@PostMapping("/posts")
-//	public void savePosts(@RequestBody PostsSaveRequestDto dto) {
-//		postsRepository.save(dto.toEntity());
-//	}
 	
 	@PostMapping("/posts")
 	public Long savePosts(@RequestBody PostsSaveRequestDto dto) {
