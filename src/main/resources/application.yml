@@ -1,12 +1,20 @@
 spring:
   profiles:
     active: local # 기본 환경 선택
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect    
     
 # local 환경
 ---
 spring:
   profiles: local
   datasource:
+#        url: jdbc:mariadb://localhost:3307/webservice
+#        username: root
+#        password: eodfks09
+#        driver-class-name: org.mariadb.jdbc.Driver
     data: classpath:data-h2.sql # 시작할때 실행시킬 script
   jpa:
     show-sql: true
@@ -18,13 +26,15 @@ spring:
       
 # 운영 환경
 ---
-spring:
-  profiles: set1
+spring.profiles: set1
+spring.profiles.include: real-db
+
 server:
   port: 8081
 
 ---
-spring:
-  profiles: set2
+spring.profiles: set2
+spring.profiles.include: real-db
+
 server:
-  port: 8082       
+  port: 8082
