@@ -19,4 +19,9 @@ public class WebController {
 		model.addAttribute("posts", postsService.findAllDesc());
 		return "main";
 	}
+	
+	@GetMapping("/home")
+	public String home() {
+		return "home";
+	}
 }
