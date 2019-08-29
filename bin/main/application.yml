@@ -28,12 +28,13 @@ spring:
 ---
 spring:
   profiles: set1
-#spring.profiles.include: real-db
-  datasource:
-    url: jdbc:mariadb://springbootwebservice.cbg3mvbtqwas.ap-northeast-2.rds.amazonaws.com:3306/webservice
-    username: youngran
-    password: eodfks09
-    driver-class-name: org.mariadb.jdbc.Driver
+  profiles.include: real-db
+  
+#  datasource:
+#    url: jdbc:mariadb://springbootwebservice.cbg3mvbtqwas.ap-northeast-2.rds.amazonaws.com:3306/webservice
+#    username: youngran
+#    password: eodfks09
+#    driver-class-name: org.mariadb.jdbc.Driver
 
 server:
   port: 8081
@@ -41,12 +42,13 @@ server:
 ---
 spring:
   profiles: set2
-#spring.profiles.include: real-db
-  datasource:
-    url: jdbc:mariadb://springbootwebservice.cbg3mvbtqwas.ap-northeast-2.rds.amazonaws.com:3306/webservice
-    username: youngran
-    password: eodfks09
-    driver-class-name: org.mariadb.jdbc.Driver
+  profiles.include: real-db
+  
+#  datasource:
+#    url: jdbc:mariadb://springbootwebservice.cbg3mvbtqwas.ap-northeast-2.rds.amazonaws.com:3306/webservice
+#    username: youngran
+#    password: eodfks09
+#    driver-class-name: org.mariadb.jdbc.Driver
 
 server:
   port: 8082
