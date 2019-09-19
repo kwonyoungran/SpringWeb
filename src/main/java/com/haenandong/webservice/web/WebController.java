@@ -14,14 +14,28 @@ public class WebController {
 	
 	private PostsService postsService;
 
+	//Handlebars
 	@GetMapping("/")
 	public String main(Model model) {
 		model.addAttribute("posts", postsService.findAllDesc());
 		return "main";
 	}
 	
+	//jsp
 	@GetMapping("/home")
 	public String home() {
 		return "home";
 	}
+	
+	@GetMapping("/gangwha_home")
+	public String gangwha_home() {
+		return "gangwha_home";
+	}
+	
+	//naberlogin test
+	@GetMapping("/naverlogin")
+	public String naverlogin() {
+		return "naverlogin/naverlogin";
+	}
+	
 }

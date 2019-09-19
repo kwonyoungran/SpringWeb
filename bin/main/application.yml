@@ -9,6 +9,13 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+
+#tomcat server 변경      
+server:
+  port: 83
     
 # local 환경
 ---
